@@ -1,11 +1,6 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from app import create_app
 
-db = SQLAlchemy()
+flask_app = create_app()
 
-def create_app():
-        app = Flask(__name__, template_folder='templates')
-        app.config['SQLACADEMY_DATABASE_URI'] = 'sqlite:///./testdb.db'
-
-        db.init_app(app)
+if __name__ == '__main__':
+        flask_app.run(host='0.0.0.0', debug=True)
