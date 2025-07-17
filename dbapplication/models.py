@@ -1,6 +1,6 @@
 from app import db
 
-class Person():
+class Person(db.Model):
         __tablename__ = 'people'
 
         pid = db.Column(db.Integer, primary_key=True)
@@ -9,4 +9,4 @@ class Person():
         job = db.Column(db.Text)
 
         def __repr__(self):
-                return f'Person with name {self.name} and age {self.age}'
+                return f'Person with name {self.name} and age {self.age }'
