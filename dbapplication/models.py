@@ -10,3 +10,12 @@ class Person(db.Model):
 
         def __repr__(self):
                 return f'Person with name {self.name} and age {self.age }'
+        
+class User(db.Model, UserMixin):
+        __tablename__ = 'users'
+
+        uid = db.Column(db.Integer, primary_key=True)
+        username = db.Column(db.String, nullable=False)
+        password = db.Column(db.String, nullable=False)
+        role = db.Column(db.String)
+        description = db.Column(db.String)
